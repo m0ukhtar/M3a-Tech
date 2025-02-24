@@ -47,103 +47,6 @@
           </div>
         </div>
       </div>
-  
-      <div class="row text-center mt-4">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="service-box p-4">
-            <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
-            <h4>Adresses Emails Personnalisées</h4>
-            <p>Créez des adresses email professionnelles avec votre nom de domaine.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-box p-4">
-            <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
-            <h4>Applications Web et Logiciels</h4>
-            <p>Développement sur mesure d'applications web et logicielles.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-box p-4">
-            <i class="fas fa-bullhorn fa-3x mb-3 text-primary"></i>
-            <h4>Marketing Digital</h4>
-            <p>Boostez votre présence en ligne avec des campagnes marketing personnalisées.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="testimonials" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Témoignages de Nos Clients</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <blockquote class="blockquote">
-            <p class="mb-0">"M3A-TECH a révolutionné notre présence en ligne. Grâce à eux, notre entreprise a vu une augmentation des ventes."</p>
-            <footer class="blockquote-footer">Ali Abdoulaye, CEO de Chad Business Co.</footer>
-          </blockquote>
-        </div>
-        <div class="col-md-6">
-          <blockquote class="blockquote">
-            <p class="mb-0">"Le service était rapide et professionnel. Notre site est maintenant un atout clé pour attirer de nouveaux clients."</p>
-            <footer class="blockquote-footer">Fatima Oumar, Directrice Marketing de Tchad Innovations.</footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Section CTA -->
-  <section id="cta" class="py-3 bg-primary text-white text-center d-flex justify-content-center align-items-center">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <h2 class="mb-3 mb-md-0" data-aos="fade-up">Obtenez un Devis Gratuit</h2>
-      <p class="lead mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">Contactez-nous dès aujourd'hui pour obtenir un devis personnalisé pour vos projets web, logiciels ou marketing digital.</p>
-      <a href="#contact" class="btn btn-lg btn-light d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
-        Contactez-nous maintenant <i class="fas fa-arrow-right ml-2"></i>
-      </a>
-    </div>
-  </section>
-  <!-- Section About -->
-  <section id="about" class="bg-light py-5 text-center">
-    <div class="container">
-      <h2 data-aos="fade-up">À propos de nous</h2>
-      <p data-aos="fade-up" data-aos-delay="200">Chez M3A-TECH, nous croyons en l'innovation technologique pour révolutionner les entreprises modernes.</p>
-    </div>
-  </section>
-
-  <!-- Section Galerie -->
-  <section id="gallery" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4" data-aos="fade-up">Projets réalisés</h2>
-      <div class="row">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="card mb-4 shadow-sm">
-            <img src="service-web.jpg" class="card-img-top" alt="Image 1">
-            <div class="card-body">
-              <h5 class="card-title">Application web ECOLNA</h5>
-              <p class="card-text">Un site web futuriste pour un client exigeant.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card mb-4 shadow-sm">
-            <img src="service-marketing.jpg" class="card-img-top" alt="Image 2">
-            <div class="card-body">
-              <h5 class="card-title">Projet 2</h5>
-              <p class="card-text">Une solution e-commerce moderne et rapide.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="card mb-4 shadow-sm">
-            <img src="path/to/image3.jpg" class="card-img-top" alt="Image 3">
-            <div class="card-body">
-              <h5 class="card-title">Projet 3</h5>
-              <p class="card-text">Design élégant et interfaces intuitives.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -151,45 +54,62 @@
   <section id="contact" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4" data-aos="fade-up">Contactez-nous</h2>
-      <p class="text-center" data-aos="fade-up" data-aos-delay="200">Vous avez un projet en tête ? Besoin d'une stratégie digitale ? Remplissez le formulaire ci-dessous ou appelez-nous pour une consultation gratuite.</p>
+      <p class="text-center" data-aos="fade-up" data-aos-delay="200">
+        Vous avez un projet en tête ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.
+      </p>
       <div class="row">
         <div class="col-md-6 offset-md-3" data-aos="fade-up" data-aos-delay="400">
-          <form action="#" method="post">
+          <form action="contact.php" method="post">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Votre nom" required>
+              <input type="text" name="nom" class="form-control" placeholder="Votre nom" required>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Votre email" required>
+              <input type="email" name="email" class="form-control" placeholder="Votre email" required>
             </div>
             <div class="form-group">
-              <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+              <textarea name="message" class="form-control" rows="5" placeholder="Votre message" required></textarea>
             </div>
             <button type="submit" class="btn btn-lg btn-primary btn-block">Envoyer</button>
           </form>
+
+          <!-- Message de confirmation après l'envoi -->
+          <div id="message-envoye" class="alert alert-success mt-3" style="display: none;">
+            Votre message a bien été envoyé. Nous vous répondrons sous peu.
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section scripts -->
+  <!-- Scripts -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
   <script>
     AOS.init({
-      duration: 1200, // Durée des animations
+      duration: 1200
+    });
+
+    // Afficher le message de confirmation après l'envoi
+    document.querySelector("form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Empêche le rechargement immédiat
+      let formData = new FormData(this);
+
+      fetch("contact.php", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("message-envoye").style.display = "block";
+        this.reset(); // Réinitialiser le formulaire
+      })
+      .catch(error => console.error("Erreur :", error));
     });
   </script>
-    <!--<script>
-    AOS.init({
-      duration: 1200,
-      disable: function() {
-        return window.innerWidth < 768;
-      }
-    });
-  </script>-->
+
   <!-- Footer -->
   <footer class="py-4 bg-dark text-white text-center">
     <div class="container">
@@ -199,5 +119,6 @@
       <p class="mt-3">&copy; 2024 M3A-TECH. Tous droits réservés.</p>
     </div>
   </footer>
+
 </body>
 </html>
