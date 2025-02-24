@@ -122,40 +122,31 @@
     </section>
 
     <!-- Section CTA -->
-    <section
-      id="cta"
-      class="py-3 bg-primary text-white text-center d-flex justify-content-center align-items-center"
+<section
+  id="cta"
+  class="py-3 bg-primary text-white text-center d-flex justify-content-center align-items-center"
+>
+  <div
+    class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
+  >
+    <h2 class="mb-3 mb-md-0" data-aos="fade-up">
+      Obtenez un Devis Gratuit
+    </h2>
+    <p class="lead mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+      Contactez-nous dès aujourd'hui pour obtenir un devis personnalisé pour
+      vos projets web, logiciels ou marketing digital.
+    </p>
+    <a
+      href="#contact"
+      class="btn btn-lg btn-light d-flex align-items-center"
+      data-aos="fade-up"
+      data-aos-delay="400"
+      onclick="smoothScroll(event, '#contact')"
     >
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
-      >
-        <h2 class="mb-3 mb-md-0" data-aos="fade-up">
-          Obtenez un Devis Gratuit
-        </h2>
-        <p class="lead mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">
-          Contactez-nous dès aujourd'hui pour obtenir un devis personnalisé pour
-          vos projets web, logiciels ou marketing digital.
-        </p>
-        <a
-          href="#contact"
-          class="btn btn-lg btn-light d-flex align-items-center"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          Contactez-nous maintenant <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-      </div>
-    </section>
-    <!-- Section About -->
-    <section id="about" class="bg-light py-5 text-center">
-      <div class="container">
-        <h2 data-aos="fade-up">À propos de nous</h2>
-        <p data-aos="fade-up" data-aos-delay="200">
-          Chez M3A-TECH, nous croyons en l'innovation technologique pour
-          révolutionner les entreprises modernes.
-        </p>
-      </div>
-    </section>
+      Contactez-nous maintenant <i class="fas fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+</section>
 
     <!-- Section Galerie -->
     <section id="gallery" class="py-5">
@@ -165,7 +156,7 @@
           <div class="col-md-4" data-aos="fade-up">
             <div class="card mb-4 shadow-sm">
               <img
-                src="service-web.jpg"
+                src="/images/service-web.jpg"
                 class="card-img-top"
                 alt="Image 1"
               />
@@ -180,7 +171,7 @@
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card mb-4 shadow-sm">
               <img
-                src="service-marketing.jpg"
+                src="/images/service-marketing.jpg"
                 class="card-img-top"
                 alt="Image 2"
               />
@@ -303,6 +294,16 @@
             })
             .catch((error) => console.error("Erreur :", error));
         });
+        function smoothScroll(event, target) {
+          event.preventDefault(); // Empêche l'action par défaut du lien
+          let element = document.querySelector(target);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }
     </script>
 
     <!-- Footer -->

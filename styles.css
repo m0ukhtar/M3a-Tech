@@ -25,7 +25,7 @@ a {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('hero-background.jpg') no-repeat center center/cover;
+  background: url('/images/hero-background.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   position: relative;
 }
@@ -134,6 +134,11 @@ a {
   background-size: cover;
   z-index: 1;
 }
+
+/* Assurer que le bouton est cliquable */
+#cta a.btn {
+  position: relative;
+  z-index: 3; /* Pour que le bouton soit au-dessus de tout */
 
 /* Social Icons */
 .social-icon {
