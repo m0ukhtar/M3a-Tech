@@ -1,190 +1,840 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-bs-theme="light">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M3A-TECH | Solutions Web Futuristes</title>
-  <meta name="description" content="M3A-TECH - Solutions web futuristes et innovantes. Développement de sites web, applications, SEO et marketing digital.">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      M3A-TECH | Solutions Web Innovantes & Développement Sur Mesure
+    </title>
+    <meta
+      name="description"
+      content="Agence web spécialisée dans la création de sites modernes, applications web et stratégies digitales. Boostez votre présence en ligne avec M3A-TECH."
+    />
+    <meta
+      name="keywords"
+      content="développement web, création site internet, SEO, marketing digital, Tchad, applications web"
+    />
 
-    <!-- Section Hero -->
-  <header class="hero-section text-white d-flex justify-content-center align-items-center">
-      <div class="container text-center">
-        <h1 class="display-3">Bienvenue chez M3A-TECH</h1>
-      <p class="lead">Nous propulsons votre entreprise dans le futur avec des solutions digitales innovantes</p>
-      <a href="#services" class="btn btn-primary btn-lg mt-3">Découvrez nos services</a>
+    <!-- Préchargement des ressources critiques -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      as="style"
+    />
+    <link rel="preload" href="styles.css" as="style" />
+
+    <!-- Favicon moderne -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00bcd4" />
+    <meta name="msapplication-TileColor" content="#00bcd4" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts modernes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons modernes -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS optimisé -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Navigation améliorée -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-opacity-90"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <span class="fw-bold text-primary">M3A</span>-TECH
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-primary ms-lg-3">Devis gratuit</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section améliorée -->
+    <header id="home" class="hero-section">
+      <div class="hero-content container">
+        <h1 data-aos="fade-up">
+          Solutions Digitales <span class="text-primary">Sur Mesure</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+          Nous transformons vos idées en expériences digitales exceptionnelles.
+          Développement web, applications mobiles et stratégies marketing
+          innovantes.
+        </p>
+        <div
+          class="d-flex flex-column flex-sm-row gap-3 justify-content-center"
+        >
+          <a
+            href="#services"
+            class="btn btn-primary"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Nos services <i class="fas fa-arrow-down ms-2"></i>
+          </a>
+          <a
+            href="#contact"
+            class="btn btn-outline-light"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            Contactez-nous <i class="fas fa-phone ms-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Effet vague -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            fill="#f8f9fa"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            fill="#f8f9fa"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            fill="#f8f9fa"
+          ></path>
+        </svg>
       </div>
     </header>
 
-    <!-- Section Services -->
-    <section id="services" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-4" data-aos="fade-up">Nos Services</h2>
-        <div class="row text-center">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="service-box p-4">
-              <i class="fas fa-laptop-code fa-3x mb-3 text-primary"></i>
-              <h4>Développement Web</h4>
-              <p>Sites web modernes, performants et sécurisés.</p>
+    <!-- Section Services Complète -->
+    <section id="services" class="py-5 bg-light position-relative">
+      <!-- Effet de fond décoratif -->
+
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >Nos Expertises</span
+          >
+          <h2 class="display-5 fw-bold mb-3" data-aos="fade-up">
+            Solutions Digitales Complètes
+          </h2>
+          <p
+            class="lead text-muted mx-auto"
+            style="max-width: 700px"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Nous combinons technologie de pointe et design innovant pour créer
+            des expériences digitales mémorables
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Service 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="service-box h-100">
+              <div
+                class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-4"
+              >
+                <i class="fas fa-laptop-code fa-2x"></i>
+              </div>
+              <h4 class="mb-3">Développement Web</h4>
+              <p class="text-muted mb-4">
+                Sites vitrines, e-commerce et applications web performantes
+                conçues sur mesure.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Sites
+                  responsive
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> CMS
+                  personnalisés
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> API
+                  intégrées
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-sm btn-outline-primary"
+                >Demander un devis</a
+              >
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-box p-4">
-              <i class="fas fa-search fa-3x mb-3 text-primary"></i>
-              <h4>SEO Optimisé</h4>
-              <p>Visibilité accrue sur les moteurs de recherche.</p>
+
+          <!-- Service 2 -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-box h-100">
+              <div
+                class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-4"
+              >
+                <i class="fas fa-search fa-2x"></i>
+              </div>
+              <h4 class="mb-3">SEO Optimisé</h4>
+              <p class="text-muted mb-4">
+                Augmentez votre visibilité sur les moteurs de recherche avec
+                notre expertise SEO.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Audit
+                  technique
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Optimisation on-page
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Stratégie de contenu
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-sm btn-outline-primary"
+                >Booster votre SEO</a
+              >
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-box p-4">
-              <i class="fas fa-palette fa-3x mb-3 text-primary"></i>
-              <h4>Design UX/UI</h4>
-              <p>Expériences utilisateurs intuitives et engageantes.</p>
+
+          <!-- Service 3 -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-box h-100">
+              <div
+                class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-4"
+              >
+                <i class="fas fa-palette fa-2x"></i>
+              </div>
+              <h4 class="mb-3">Design UX/UI</h4>
+              <p class="text-muted mb-4">
+                Interfaces intuitives et expériences utilisateur mémorables.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Wireframes interactifs
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Tests
+                  utilisateurs
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Design
+                  systems
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-sm btn-outline-primary"
+                >Voir nos réalisations</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="service-box h-100">
+              <div
+                class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-4"
+              >
+                <i class="fas fa-envelope fa-2x"></i>
+              </div>
+              <h4 class="mb-3">Emails Professionnels</h4>
+              <p class="text-muted mb-4">
+                Créez des adresses email personnalisées avec votre nom de
+                domaine.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Configuration facile
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Antispam
+                  intégré
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Synchronisation multi-appareils
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-sm btn-outline-primary"
+                >Configurer mon email</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-box h-100">
+              <div
+                class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-4"
+              >
+                <i class="fas fa-mobile-alt fa-2x"></i>
+              </div>
+              <h4 class="mb-3">Applications Mobile</h4>
+              <p class="text-muted mb-4">
+                Applications natives et hybrides pour iOS et Android.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Développement cross-platform
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Intégration API
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Publication sur les stores
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-sm btn-outline-primary"
+                >Créer mon app</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-box h-100">
+              <div
+                class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-4"
+              >
+                <i class="fas fa-bullhorn fa-2x"></i>
+              </div>
+              <h4 class="mb-3">Marketing Digital</h4>
+              <p class="text-muted mb-4">
+                Stratégies digitales sur-mesure pour maximiser votre visibilité.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Campagnes publicitaires
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Gestion
+                  des réseaux sociaux
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Analyse
+                  des performances
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-sm btn-outline-primary"
+                >Booster ma visibilité</a
+              >
             </div>
           </div>
         </div>
 
-        <div class="row text-center mt-4">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="service-box p-4">
-              <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
-              <h4>Adresses Emails Personnalisées</h4>
-              <p>
-                Créez des adresses email professionnelles avec votre nom de
-                domaine.
-              </p>
+        <!-- Bandeau stats -->
+        <div class="row g-4 mt-5" data-aos="fade-up">
+          <div class="col-6 col-md-3 text-center">
+            <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
+              <h3 class="display-5 fw-bold text-primary mb-1">
+                <span class="counter" data-target="150">0</span>+
+              </h3>
+              <p class="mb-0 text-muted">Projets réalisés</p>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-box p-4">
-              <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
-              <h4>Applications Web et Logiciels</h4>
-              <p>Développement sur mesure d'applications web et logicielles.</p>
+          <div class="col-6 col-md-3 text-center">
+            <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
+              <h3 class="display-5 fw-bold text-primary mb-1">
+                <span class="counter" data-target="98">0</span>%
+              </h3>
+              <p class="mb-0 text-muted">Clients satisfaits</p>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-box p-4">
-              <i class="fas fa-bullhorn fa-3x mb-3 text-primary"></i>
-              <h4>Marketing Digital</h4>
-              <p>
-                Boostez votre présence en ligne avec des campagnes marketing
-                personnalisées.
-              </p>
+          <div class="col-6 col-md-3 text-center">
+            <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
+              <h3 class="display-5 fw-bold text-primary mb-1">
+                <span class="counter" data-target="15">0</span>+
+              </h3>
+              <p class="mb-0 text-muted">Experts techniques</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
+              <h3 class="display-5 fw-bold text-primary mb-1">
+                <span class="counter" data-target="5">0</span>+
+              </h3>
+              <p class="mb-0 text-muted">Années d'expérience</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="testimonials" class="py-5 bg-light">
+
+    <!-- Autres sections améliorées (portfolio, témoignages, CTA, contact) -->
+    <!-- Section Portfolio -->
+    <section id="portfolio" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Témoignages de Nos Clients</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <blockquote class="blockquote">
-              <p class="mb-0">
-                "M3A-TECH a révolutionné notre présence en ligne. Grâce à eux,
-                notre entreprise a vu une augmentation des ventes."
-              </p>
-              <footer class="blockquote-footer">
-                Ali Abdoulaye, CEO de Chad Business Co.
-              </footer>
-            </blockquote>
+        <div class="text-center mb-5">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >Nos Réalisations</span
+          >
+          <h2 class="display-5 fw-bold mb-3" data-aos="fade-up">
+            Projets Récents
+          </h2>
+          <p
+            class="lead text-muted mx-auto"
+            style="max-width: 700px"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Découvrez une sélection de nos réalisations pour des clients
+            exigeants
+          </p>
+        </div>
+
+        <!-- Filtres Portfolio -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-auto">
+            <div class="btn-group btn-group-sm" role="group">
+              <button
+                type="button"
+                class="btn btn-outline-primary active"
+                data-filter="all"
+              >
+                Tous
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                data-filter="web"
+              >
+                Web
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                data-filter="mobile"
+              >
+                Mobile
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                data-filter="design"
+              >
+                Design
+              </button>
+            </div>
           </div>
-          <div class="col-md-6">
-            <blockquote class="blockquote">
-              <p class="mb-0">
-                "Le service était rapide et professionnel. Notre site est
-                maintenant un atout clé pour attirer de nouveaux clients."
-              </p>
-              <footer class="blockquote-footer">
-                Fatima Oumar, Directrice Marketing de Tchad Innovations.
-              </footer>
-            </blockquote>
+        </div>
+
+        <!-- Grille Portfolio -->
+        <div class="row g-4 portfolio-grid">
+          <!-- Projet 1 -->
+          <div
+            class="col-md-6 col-lg-4 portfolio-item"
+            data-category="web"
+            data-aos="fade-up"
+          >
+            <div class="card overflow-hidden border-0 shadow-sm h-100">
+              <div class="portfolio-img-wrapper">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  data-src="images/project1.jpg"
+                  class="card-img-top img-fluid lazy"
+                  alt="Application web ECOLNA"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a
+                    href="images/project1.jpg"
+                    class="portfolio-preview"
+                    data-fslightbox="portfolio"
+                    data-caption="Application web ECOLNA"
+                  >
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                  <a href="project-details.html" class="portfolio-link">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                  >Développement Web</span
+                >
+                <h5 class="card-title mb-1">Application web ECOLNA</h5>
+                <p class="card-text text-muted">
+                  Plateforme de gestion scolaire complète avec tableau de bord
+                  analytique.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a
+                  href="project-details.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Voir le projet</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div
+            class="col-md-6 col-lg-4 portfolio-item"
+            data-category="mobile"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card overflow-hidden border-0 shadow-sm h-100">
+              <div class="portfolio-img-wrapper">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  data-src="images/project2.jpg"
+                  class="card-img-top img-fluid lazy"
+                  alt="Application mobile TchadMarket"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a
+                    href="images/project2.jpg"
+                    class="portfolio-preview"
+                    data-fslightbox="portfolio"
+                    data-caption="Application mobile TchadMarket"
+                  >
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                  <a href="project-details.html" class="portfolio-link">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                  >Application Mobile</span
+                >
+                <h5 class="card-title mb-1">TchadMarket</h5>
+                <p class="card-text text-muted">
+                  Marketplace mobile pour les commerçants locaux avec paiement
+                  intégré.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a
+                  href="project-details.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Voir le projet</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div
+            class="col-md-6 col-lg-4 portfolio-item"
+            data-category="design"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="card overflow-hidden border-0 shadow-sm h-100">
+              <div class="portfolio-img-wrapper">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  data-src="images/project3.jpg"
+                  class="card-img-top img-fluid lazy"
+                  alt="Redesign Tchad Innovations"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a
+                    href="images/project3.jpg"
+                    class="portfolio-preview"
+                    data-fslightbox="portfolio"
+                    data-caption="Redesign Tchad Innovations"
+                  >
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                  <a href="project-details.html" class="portfolio-link">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                  >Design UX/UI</span
+                >
+                <h5 class="card-title mb-1">Redesign Tchad Innovations</h5>
+                <p class="card-text text-muted">
+                  Refonte complète de l'identité visuelle et de l'expérience
+                  utilisateur.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a
+                  href="project-details.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Voir le projet</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="portfolio.html" class="btn btn-primary px-4">
+            Voir tous nos projets <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section id="testimonials" class="py-5 bg-light position-relative">
+      <!-- Effet de fond décoratif -->
+
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >Ils nous font confiance</span
+          >
+          <h2 class="display-5 fw-bold mb-3" data-aos="fade-up">
+            Témoignages Clients
+          </h2>
+          <p
+            class="lead text-muted mx-auto"
+            style="max-width: 700px"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Découvrez ce que nos clients disent de notre collaboration
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Témoignage 1 -->
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                  <img
+                    src="https://via.placeholder.com/80"
+                    data-src="images/client1.jpg"
+                    class="rounded-circle me-3 lazy"
+                    width="60"
+                    height="60"
+                    alt="Ali Abdoulaye"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h5 class="mb-1">Ali Abdoulaye</h5>
+                    <p class="text-muted mb-0">CEO, Chad Business Co.</p>
+                  </div>
+                  <div class="ms-auto text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">
+                  "M3A-TECH a révolutionné notre présence en ligne. Leur équipe
+                  a su comprendre nos besoins spécifiques et a livré un site web
+                  qui a transformé notre business. En seulement 3 mois, nos
+                  ventes en ligne ont augmenté de 150%."
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-quote-left text-primary me-2"></i>
+                  <small class="text-muted"
+                    >Projet: Plateforme e-commerce</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Témoignage 2 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                  <img
+                    src="https://via.placeholder.com/80"
+                    data-src="images/client2.jpg"
+                    class="rounded-circle me-3 lazy"
+                    width="60"
+                    height="60"
+                    alt="Fatima Oumar"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h5 class="mb-1">Fatima Oumar</h5>
+                    <p class="text-muted mb-0">
+                      Directrice Marketing, Tchad Innovations
+                    </p>
+                  </div>
+                  <div class="ms-auto text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                </div>
+                <p class="card-text">
+                  "Le service était rapide et professionnel. Notre site est
+                  maintenant un atout clé pour attirer de nouveaux clients.
+                  L'équipe de M3A-TECH a été réactive à toutes nos demandes et a
+                  su proposer des solutions innovantes à nos challenges
+                  techniques."
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-quote-left text-primary me-2"></i>
+                  <small class="text-muted"
+                    >Projet: Refonte de site corporate</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logos clients -->
+        <div class="row g-4 mt-5 align-items-center" data-aos="fade-up">
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="https://via.placeholder.com/150x80"
+              data-src="images/client-logo1.png"
+              class="img-fluid lazy grayscale"
+              alt="Client Logo"
+              loading="lazy"
+              style="max-height: 60px"
+            />
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="https://via.placeholder.com/150x80"
+              data-src="images/client-logo2.png"
+              class="img-fluid lazy grayscale"
+              alt="Client Logo"
+              loading="lazy"
+              style="max-height: 60px"
+            />
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="https://via.placeholder.com/150x80"
+              data-src="images/client-logo3.png"
+              class="img-fluid lazy grayscale"
+              alt="Client Logo"
+              loading="lazy"
+              style="max-height: 60px"
+            />
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="https://via.placeholder.com/150x80"
+              data-src="images/client-logo4.png"
+              class="img-fluid lazy grayscale"
+              alt="Client Logo"
+              loading="lazy"
+              style="max-height: 60px"
+            />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Section CTA -->
-<section
-  id="cta"
-  class="py-3 bg-primary text-white text-center d-flex justify-content-center align-items-center"
->
-  <div
-    class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
-  >
-    <h2 class="mb-3 mb-md-0" data-aos="fade-up">
-      Obtenez un Devis Gratuit
-    </h2>
-    <p class="lead mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">
-      Contactez-nous dès aujourd'hui pour obtenir un devis personnalisé pour
-      vos projets web, logiciels ou marketing digital.
-    </p>
-    <a
-      href="#contact"
-      class="btn btn-lg btn-light d-flex align-items-center"
-      data-aos="fade-up"
-      data-aos-delay="400"
-      onclick="smoothScroll(event, '#contact')"
+    <section
+      id="cta"
+      class="py-5 bg-dark text-white position-relative overflow-hidden"
     >
-      Contactez-nous maintenant <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-  </div>
-</section>
+      <!-- Effets de fond -->
+      <div
+        class="position-absolute bottom-0 end-0 w-100 h-100"
+        style="
+          background: radial-gradient(
+            circle at 75% 75%,
+            rgba(0, 188, 212, 0.3) 0%,
+            transparent 50%
+          );
+        "
+      ></div>
 
-    <!-- Section Galerie -->
-    <section id="gallery" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-4" data-aos="fade-up">Projets réalisés</h2>
-        <div class="row">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="card mb-4 shadow-sm">
-              <img
-                src="service-web.jpg"
-                class="card-img-top"
-                alt="Image 1"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Application web ECOLNA</h5>
-                <p class="card-text">
-                  Un site web futuriste pour un client exigeant.
-                </p>
-              </div>
-            </div>
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+            <h2 class="display-5 fw-bold mb-3">
+              Prêt à transformer votre idée en réalité ?
+            </h2>
+            <p class="lead mb-0 opacity-75">
+              Contactez-nous dès aujourd'hui pour un audit gratuit de votre
+              projet et recevez un devis personnalisé sous 24h.
+            </p>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card mb-4 shadow-sm">
-              <img
-                src="service-marketing.jpg"
-                class="card-img-top"
-                alt="Image 2"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Projet 2</h5>
-                <p class="card-text">
-                  Une solution e-commerce moderne et rapide.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card mb-4 shadow-sm">
-              <img
-                src="path/to/image3.jpg"
-                class="card-img-top"
-                alt="Image 3"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Projet 3</h5>
-                <p class="card-text">
-                  Design élégant et interfaces intuitives.
-                </p>
-              </div>
-            </div>
+          <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+            <a
+              href="#contact"
+              class="btn btn-light btn-lg px-4 py-3 d-inline-flex align-items-center"
+            >
+              <i class="fas fa-paper-plane me-2"></i> Demander un devis
+            </a>
           </div>
         </div>
       </div>
@@ -193,119 +843,297 @@
     <!-- Section Contact -->
     <section id="contact" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4" data-aos="fade-up">Contactez-nous</h2>
-        <p class="text-center" data-aos="fade-up" data-aos-delay="200">
-          Vous avez un projet en tête ? Remplissez le formulaire ci-dessous et
-          nous vous répondrons rapidement.
-        </p>
-        <div class="row">
-          <div
-            class="col-md-6 offset-md-3"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <form action="contact.php" method="post">
-              <div class="form-group">
-                <input
-                  type="text"
-                  name="nom"
-                  class="form-control"
-                  placeholder="Votre nom"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="Votre email"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <textarea
-                  name="message"
-                  class="form-control"
-                  rows="5"
-                  placeholder="Votre message"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-lg btn-primary btn-block">
-                Envoyer
-              </button>
-            </form>
+        <div class="row g-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="pe-lg-5">
+              <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+                >Contactez-nous</span
+              >
+              <h2 class="display-5 fw-bold mb-4">Travaillons ensemble</h2>
+              <p class="lead mb-4">
+                Vous avez un projet en tête ? Remplissez le formulaire ou
+                contactez-nous directement par téléphone ou email.
+              </p>
 
-            <!-- Message de confirmation après l'envoi -->
-            <div
-              id="message-envoye"
-              class="alert alert-success mt-3"
-              style="display: none"
-            >
-              Votre message a bien été envoyé. Nous vous répondrons sous peu.
+              <div class="d-flex mb-4">
+                <div class="me-4">
+                  <div
+                    class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-3"
+                  >
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="mb-2">Notre adresse</h5>
+                  <p class="text-muted mb-0">
+                    Avenue Charles de Gaulle, N'Djamena, Tchad
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-4">
+                <div class="me-4">
+                  <div
+                    class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-3"
+                  >
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="mb-2">Appelez-nous</h5>
+                  <p class="text-muted mb-0">
+                    <a href="tel:+23512345678" class="text-reset"
+                      >+235 12 34 56 78</a
+                    ><br />
+                    Lundi - Vendredi, 8h - 18h
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex">
+                <div class="me-4">
+                  <div
+                    class="icon-wrapper bg-primary bg-opacity-10 text-primary mb-3"
+                  >
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="mb-2">Email</h5>
+                  <p class="text-muted mb-0">
+                    <a href="mailto:contact@m3a-tech.com" class="text-reset"
+                      >contact@m3a-tech.com</a
+                    ><br />
+                    Réponse sous 24h
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4 p-md-5">
+                <form id="contactForm" action="contact.php" method="POST">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="name" class="form-label"
+                        >Votre nom complet</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Votre email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="subject" class="form-label">Sujet</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="subject"
+                        name="subject"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label"
+                        >Votre message</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="consent"
+                          required
+                        />
+                        <label class="form-check-label small" for="consent">
+                          J'accepte que mes données soient traitées conformément
+                          à la politique de confidentialité
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary px-4 py-3">
+                        <i class="fas fa-paper-plane me-2"></i> Envoyer le
+                        message
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- Messages de retour -->
+                <div id="formSuccess" class="alert alert-success mt-4 d-none">
+                  <i class="fas fa-check-circle me-2"></i> Merci ! Votre message
+                  a bien été envoyé. Nous vous répondrons dans les plus brefs
+                  délais.
+                </div>
+                <div id="formError" class="alert alert-danger mt-4 d-none">
+                  <i class="fas fa-exclamation-circle me-2"></i> Une erreur
+                  s'est produite lors de l'envoi. Veuillez réessayer ou nous
+                  contacter directement.
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts optimisés -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/your_kit_id.js"
-      crossorigin="anonymous"
-    ></script>
     <script>
+      // Initialisation des animations
       AOS.init({
-        duration: 1200,
+        duration: 800,
+        once: true,
       });
 
-      // Afficher le message de confirmation après l'envoi
-      document
-        .querySelector("form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Empêche le rechargement immédiat
-          let formData = new FormData(this);
-
-          fetch("contact.php", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => response.text())
-            .then((data) => {
-              document.getElementById("message-envoye").style.display = "block";
-              this.reset(); // Réinitialiser le formulaire
-            })
-            .catch((error) => console.error("Erreur :", error));
-        });
-        function smoothScroll(event, target) {
-          event.preventDefault(); // Empêche l'action par défaut du lien
-          let element = document.querySelector(target);
-          if (element) {
-            element.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 100) {
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
         }
-    </script>
+      });
 
-    <!-- Footer -->
-    <footer class="py-4 bg-dark text-white text-center">
-      <div class="container">
-        <p>Suivez-nous sur nos réseaux :</p>
-        <a href="https://facebook.com" target="_blank" class="social-icon"
-          ><i class="fab fa-facebook"></i
-        ></a>
-        <a href="https://twitter.com" target="_blank" class="social-icon"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <p class="mt-3">&copy; 2024 M3A-TECH. Tous droits réservés.</p>
-      </div>
-    </footer>
+      // Formulaire de contact amélioré
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
+
+          try {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML =
+              '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Envoi en cours...';
+
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (response.ok) {
+              form.reset();
+              document.getElementById("formSuccess").classList.remove("d-none");
+              document.getElementById("formError").classList.add("d-none");
+            } else {
+              throw new Error("Erreur lors de l'envoi");
+            }
+          } catch (error) {
+            document.getElementById("formError").classList.remove("d-none");
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
+        });
+      // Fonctionnalités supplémentaires pour les sections
+
+      // Filtrage du portfolio
+      document.querySelectorAll("[data-filter]").forEach((button) => {
+        button.addEventListener("click", function () {
+          const filter = this.getAttribute("data-filter");
+
+          // Active le bouton sélectionné
+          document.querySelectorAll("[data-filter]").forEach((btn) => {
+            btn.classList.remove("active");
+          });
+          this.classList.add("active");
+
+          // Filtre les éléments
+          document.querySelectorAll(".portfolio-item").forEach((item) => {
+            if (
+              filter === "all" ||
+              item.getAttribute("data-category") === filter
+            ) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Animation des compteurs
+      function animateCounters() {
+        const counters = document.querySelectorAll(".counter");
+        const speed = 200;
+
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-target");
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(animateCounters, 1);
+          } else {
+            counter.innerText =
+              target +
+              (counter.getAttribute("data-target").endsWith("+") ? "+" : "");
+          }
+        });
+      }
+
+      // Détection quand la section est visible
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll(".counter-box").forEach((box) => {
+        observer.observe(box);
+      });
+
+      // Lightbox pour le portfolio
+      if (document.querySelector("[data-fslightbox]")) {
+        const lightbox = new FsLightbox();
+        lightbox.props.sources = Array.from(
+          document.querySelectorAll("[data-fslightbox]")
+        ).map((el) => el.getAttribute("href"));
+        lightbox.props.captions = Array.from(
+          document.querySelectorAll("[data-fslightbox]")
+        ).map((el) => el.getAttribute("data-caption"));
+      }
+    </script>
   </body>
 </html>
