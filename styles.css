@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 body {
@@ -27,6 +29,8 @@ body {
   color: var(--dark);
   background-color: var(--light);
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* Hero Section améliorée */
@@ -303,8 +307,6 @@ footer {
   height: 100%;
 }
 
-/* Styles pour les sections complètes */
-
 /* Service Box améliorée */
 .service-box {
   background: white;
@@ -407,13 +409,158 @@ footer {
   transition: all 1s ease;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .service-box {
-    padding: 1.5rem;
+/* Navbar de base */
+.navbar {
+  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+}
+
+/* Version mobile (écrans < 992px) */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    background-color: rgba(33, 37, 41, 0.98) !important;
   }
   
-  .testimonial-card {
+  .navbar-collapse {
+    padding: 1rem;
+    background-color: rgba(33, 37, 41, 0.98);
+    margin: 0 -1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-nav {
+    padding-top: 0.5rem;
+  }
+  
+  .nav-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+/* Bouton toggler amélioré */
+.navbar-toggler {
+  padding: 0.5rem;
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(0, 188, 212, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* Version desktop (écrans ≥ 992px) */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.5rem 2rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 50%;
+  }
+}
+
+/* ===== CORRECTIONS RESPONSIVE MOBILE ===== */
+@media (max-width: 767px) {
+  /* Correction fondamentale */
+  html, body {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    background-attachment: scroll !important;
+    padding: 4rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  /* Boutons */
+  .btn {
+    padding: 1rem 1.5rem;
+    min-width: 180px;
+  }
+  
+  /* Services */
+  .service-box {
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+  
+  /* Désactive les animations sur mobile */
+  .service-box:hover,
+  .card:hover,
+  .portfolio-item:hover .portfolio-overlay,
+  .testimonial-card:hover {
+    transform: none !important;
+  }
+  
+  /* CTA Section */
+  #cta {
+    padding: 2rem 1rem;
+  }
+  
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Cartes */
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .social-icon {
+    margin: 0.5rem;
+  }
+}
+
+/* Correction spécifique pour iOS */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+  
+  .hero-section {
+    min-height: -webkit-fill-available;
   }
 }

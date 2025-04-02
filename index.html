@@ -388,7 +388,8 @@
           <div class="col-6 col-md-3 text-center">
             <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
               <h3 class="display-5 fw-bold text-primary mb-1">
-                <span class="counter" data-target="150">0</span>+
+                <span class="counter" data-target="150">5</span>+
+                <!--projets realises-->
               </h3>
               <p class="mb-0 text-muted">Projets réalisés</p>
             </div>
@@ -396,7 +397,8 @@
           <div class="col-6 col-md-3 text-center">
             <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
               <h3 class="display-5 fw-bold text-primary mb-1">
-                <span class="counter" data-target="98">0</span>%
+                <span class="counter" data-target="98">90</span>%
+                <!--clients satisfaits-->
               </h3>
               <p class="mb-0 text-muted">Clients satisfaits</p>
             </div>
@@ -404,7 +406,8 @@
           <div class="col-6 col-md-3 text-center">
             <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
               <h3 class="display-5 fw-bold text-primary mb-1">
-                <span class="counter" data-target="15">0</span>+
+                <span class="counter" data-target="15">3</span>+
+                <!--experts techniques-->
               </h3>
               <p class="mb-0 text-muted">Experts techniques</p>
             </div>
@@ -412,7 +415,8 @@
           <div class="col-6 col-md-3 text-center">
             <div class="counter-box p-4 bg-white rounded-3 shadow-sm">
               <h3 class="display-5 fw-bold text-primary mb-1">
-                <span class="counter" data-target="5">0</span>+
+                <span class="counter" data-target="5">4</span>+
+                <!--annee expererience-->
               </h3>
               <p class="mb-0 text-muted">Années d'expérience</p>
             </div>
@@ -491,14 +495,14 @@
               <div class="portfolio-img-wrapper">
                 <img
                   src="https://via.placeholder.com/600x400"
-                  data-src="images/project1.jpg"
+                  data-src="ecolna.jpg"
                   class="card-img-top img-fluid lazy"
                   alt="Application web ECOLNA"
                   loading="lazy"
                 />
                 <div class="portfolio-overlay">
                   <a
-                    href="images/project1.jpg"
+                    href="ecolna.jpg"
                     class="portfolio-preview"
                     data-fslightbox="portfolio"
                     data-caption="Application web ECOLNA"
@@ -915,6 +919,20 @@
             <div class="card border-0 shadow-sm">
               <div class="card-body p-4 p-md-5">
                 <form id="contactForm" action="contact.php" method="POST">
+                  <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="<?= $_SESSION['csrf_token'] = bin2hex(random_bytes(32)) ?>"
+                  />
+                  <div style="position: absolute; left: -9999px">
+                    <input
+                      type="text"
+                      name="website"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
+                  </div>
+
                   <div class="row g-3">
                     <div class="col-md-6">
                       <label for="name" class="form-label"
@@ -983,16 +1001,13 @@
                   </div>
                 </form>
 
-                <!-- Messages de retour -->
                 <div id="formSuccess" class="alert alert-success mt-4 d-none">
-                  <i class="fas fa-check-circle me-2"></i> Merci ! Votre message
-                  a bien été envoyé. Nous vous répondrons dans les plus brefs
-                  délais.
+                  <i class="fas fa-check-circle me-2"></i>
+                  <span>Merci ! Votre message a bien été envoyé.</span>
                 </div>
                 <div id="formError" class="alert alert-danger mt-4 d-none">
-                  <i class="fas fa-exclamation-circle me-2"></i> Une erreur
-                  s'est produite lors de l'envoi. Veuillez réessayer ou nous
-                  contacter directement.
+                  <i class="fas fa-exclamation-circle me-2"></i>
+                  <span>Une erreur s'est produite lors de l'envoi.</span>
                 </div>
               </div>
             </div>
@@ -1005,135 +1020,121 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // Initialisation des animations
-      AOS.init({
-        duration: 800,
-        once: true,
-      });
+      // Initialisation des animations AOS
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialisation AOS
+        if (typeof AOS !== "undefined") {
+          AOS.init({
+            duration: 800,
+            once: true,
+          });
+        }
 
-      // Navbar scroll effect
-      window.addEventListener("scroll", function () {
+        // Effet de navbar au scroll
         const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 100) {
-          navbar.classList.add("navbar-scrolled");
-        } else {
-          navbar.classList.remove("navbar-scrolled");
+        if (navbar) {
+          window.addEventListener("scroll", function () {
+            navbar.classList.toggle("navbar-scrolled", window.scrollY > 100);
+          });
+        }
+
+        // Fermeture automatique du menu mobile au clic sur un lien
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+
+        if (navLinks.length && navbarCollapse) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false,
+          });
+
+          navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth < 992) {
+                // Seulement pour mobile
+                bsCollapse.hide();
+              }
+            });
+          });
+        }
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const feedbackEl = document.getElementById("formFeedback");
+            const originalHtml = submitBtn.innerHTML;
+
+            // Reset feedback
+            feedbackEl.innerHTML = "";
+            feedbackEl.className = "mt-4 alert";
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+          <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          Envoi en cours...
+        `;
+
+            try {
+              const response = await fetch("contact.php", {
+                method: "POST",
+                body: new FormData(form),
+              });
+
+              const data = await response.json();
+
+              if (!response.ok) {
+                throw new Error(data.message || "Erreur lors de l'envoi");
+              }
+
+              // Success
+              feedbackEl.classList.add("alert-success");
+              feedbackEl.innerHTML = `
+            <i class="fas fa-check-circle me-2"></i>
+            ${data.message}
+          `;
+              form.reset();
+            } catch (error) {
+              // Error
+              feedbackEl.classList.add("alert-danger");
+              feedbackEl.innerHTML = `
+            <i class="fas fa-exclamation-circle me-2"></i>
+            ${error.message}
+          `;
+            } finally {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalHtml;
+              feedbackEl.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        }
+
+        // Gestion du token CSRF
+        const tokenInput = document.querySelector('input[name="csrf_token"]');
+        if (tokenInput) {
+          (async () => {
+            try {
+              console.log("Token dans le formulaire :", tokenInput.value);
+              const res = await fetch("csrf-token.php");
+              const data = await res.json();
+              tokenInput.value = data.token;
+            } catch (err) {
+              console.error("Erreur chargement du token CSRF :", err);
+            }
+          })();
+        }
+
+        // Chargement des images lazy
+        const lazyImages = document.querySelectorAll("img.lazy");
+        if (lazyImages.length) {
+          lazyImages.forEach((img) => {
+            img.src = img.dataset.src;
+          });
         }
       });
-
-      // Formulaire de contact amélioré
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          const form = e.target;
-          const formData = new FormData(form);
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const originalBtnText = submitBtn.innerHTML;
-
-          try {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML =
-              '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Envoi en cours...';
-
-            const response = await fetch(form.action, {
-              method: "POST",
-              body: formData,
-              headers: {
-                Accept: "application/json",
-              },
-            });
-
-            if (response.ok) {
-              form.reset();
-              document.getElementById("formSuccess").classList.remove("d-none");
-              document.getElementById("formError").classList.add("d-none");
-            } else {
-              throw new Error("Erreur lors de l'envoi");
-            }
-          } catch (error) {
-            document.getElementById("formError").classList.remove("d-none");
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
-          }
-        });
-      // Fonctionnalités supplémentaires pour les sections
-
-      // Filtrage du portfolio
-      document.querySelectorAll("[data-filter]").forEach((button) => {
-        button.addEventListener("click", function () {
-          const filter = this.getAttribute("data-filter");
-
-          // Active le bouton sélectionné
-          document.querySelectorAll("[data-filter]").forEach((btn) => {
-            btn.classList.remove("active");
-          });
-          this.classList.add("active");
-
-          // Filtre les éléments
-          document.querySelectorAll(".portfolio-item").forEach((item) => {
-            if (
-              filter === "all" ||
-              item.getAttribute("data-category") === filter
-            ) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Animation des compteurs
-      function animateCounters() {
-        const counters = document.querySelectorAll(".counter");
-        const speed = 200;
-
-        counters.forEach((counter) => {
-          const target = +counter.getAttribute("data-target");
-          const count = +counter.innerText;
-          const increment = target / speed;
-
-          if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(animateCounters, 1);
-          } else {
-            counter.innerText =
-              target +
-              (counter.getAttribute("data-target").endsWith("+") ? "+" : "");
-          }
-        });
-      }
-
-      // Détection quand la section est visible
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateCounters();
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-
-      document.querySelectorAll(".counter-box").forEach((box) => {
-        observer.observe(box);
-      });
-
-      // Lightbox pour le portfolio
-      if (document.querySelector("[data-fslightbox]")) {
-        const lightbox = new FsLightbox();
-        lightbox.props.sources = Array.from(
-          document.querySelectorAll("[data-fslightbox]")
-        ).map((el) => el.getAttribute("href"));
-        lightbox.props.captions = Array.from(
-          document.querySelectorAll("[data-fslightbox]")
-        ).map((el) => el.getAttribute("data-caption"));
-      }
     </script>
   </body>
 </html>
